@@ -1,0 +1,6 @@
+nodemon src/app.js -e js,hbs
+express-flash
+connect-flash
+flash
+express-session
+cookie-parser

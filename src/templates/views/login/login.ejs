@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../login/css/style.css">
+
+
+</head>
+<body>
+    <div class="navcontainer">
+        <div class="leftnav">
+            <a href="/index"> <img class="logo" src="../img/user/RENTAL.png" alt=""></img></a>
+        </div>
+        <div class="midnav">
+            <ul class="navitem">
+                <!-- <li><a href="/">HOME</a></li> -->
+                <li><a href="/artshop">ART GALLERY</a></li>
+                <li><a href="/scrapshop">SCRAP SHOP</a></li> 
+            </ul>
+        </div>
+        <div class="rightnav">
+            <ul class="navitem">
+                <% if(typeof logged !='undefined'){%>
+    
+                    <li><a href="/signout">LOGOUT</a></li>
+             
+    
+    
+               
+    
+                <li><a href="/subs">SUBSCRIPTION</a></li>
+    
+    
+    
+                <li><a href="/art/index">ART</a></li>
+    
+                <li><a href="/scrap/index">SCRAP</a></li>
+                <li><a href="/test">Test</a></li>
+    
+    
+    
+                <%  } else{ %>
+                    <li><a href="/login">LOGIN</a></li>
+                    <li><a href="/test">Test</a></li>
+    
+                  <% } %>
+            </ul>
+        </div>
+    </div>
+    <!-- ****************header ends here -->
+
+    <section class="login">
+
+        <form action="/login" method="POST">
+            <h3>login now</h3>
+            <input type="email" name="email" placeholder="enter your email" id="" class="box" required>
+            <input type="password" name="password" placeholder="enter your password" id="" class="box" required>
+            <div class="remember">
+                <input type="checkbox" name="" id="remember-me">
+                <label for="remember-me"> remember me </label>
+                
+            </div>
+            <% if(typeof msg !='undefined'){%> 
+           <center> <h3><%=msg %></h3></center>
+           <% } %>
+           
+            <input type="submit" name="submit" value="login now" class="btn">
+            <p>don't have an account?</p>
+            <a href="/register" class="btn link">register now</a>
+        </form>
+    
+    </section>
+    
+    
+    
+
+    
+</body>
+</html>
+
+
+

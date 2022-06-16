@@ -1,0 +1,60 @@
+.artcontainer {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 20px 50px 50px 50px;
+    justify-content: space-around;
+  }
+  .listing {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 9px 0px rgb(34 12 43 / 20%);
+    padding: 10px 10px 10px 10px;
+    height: 350px;
+    width: 300px; /*max-content */
+    /* margin: auto; */
+    margin-top: 15px;
+    /* flex: 0 0 24%; */
+    overflow: hidden;
+  }
+  .listImg {
+    padding: 6px;
+    height:170px;
+    width: 280px;
+    display: block;
+    margin: 0 auto 0 auto;
+    object-fit:cover;
+    object-position: top;
+  }
+  .listingBody {
+    padding: 10px;
+  }
+  .listingTitle {
+    font-size: 24px;
+    line-height: 30px;
+    height:60px;
+    width: 300px; 
+    overflow: hidden;
+    text-overflow: ellipsis; 
+  }
+  .listingPrice {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 30px;
+  }
+  .listingBody2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+  }
+ .btn{
+    line-height: 30px;
+    border: none;
+    color: white;
+    background-color: #0036ce;
+    padding: 5px 20px;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+ }

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/artshop.css" />
+  </head>
+
+  <body>
+    <%- include('../partials/header') -%>
+
+    <!-- product starts -->
+
+    <div class="artcontainer">
+      <% data.forEach((item)=>{ %>
+      <div class="listing">
+        <div class="listingImage">
+          <a href="./artdetail/<%=item._id%>">
+            <img
+              src="../uploads/<%= item.image %>"
+              class="listImg"
+              alt="Rooms Near Me"
+            />
+          </a>
+        </div>
+
+        <div class="listingBody">
+          <h6 class="listingTitle">
+            <a href="/artdetail/<%=item._id%>"><%= item.product_name %></a>
+          </h6>
+          <span class="listingPlace">Electric</span>
+        </div>
+
+        <div class="listingBody2">
+            <p class="listingPrice"><%= item.price %><span></span></p>
+            
+
+        <a name="proId" href="/detail/<%= item._id %>" class="btn">Details</a>
+
+      
+          </div>
+      </div>
+      <% }) %>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,58 @@
+<%- include('../../partials/Scrap_userHeader') -%>
+<div class="content pb-0">
+    <div class="animated fadeIn">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-header"><strong>Products</strong><small> Form</small></div>
+                    <div class="card-body card-block">
+                        <form action="/addscrap" method="post" enctype="multipart/form-data">
+                            <div class="form-group">
+                                <label for="company" class=" form-control-label">Choose Category</label>
+
+                                <select class="form-control" name="category" id="">
+                                    <option value="">Select Category</option>
+                                    <% if(data.length){ 
+                                        for(var i=0;i<data.length; i++) {%>
+                                   
+                                            <option value="<%= data[i].id %>"><%= data[i].name %></option>
+
+
+                                            <% } } %>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="company" class=" form-control-label">Product Name</label>
+                                <input type="text" name="name" id="company" placeholder="Enter product name" class="form-control" value="" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="company" class=" form-control-label">Price</label>
+                                <input type="number" name="price" id="company" placeholder="Enter price" value="" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="company" class=" form-control-label">Description</label>
+                                <textarea type="text" name="description" id="company" placeholder="Enter short descripttion" class="form-control" required></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="company" class=" form-control-label">Quantity</label>
+                                <input type="text" name="qty" id="company" placeholder="Enter quantity" value="" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="company" class=" form-control-label">Quantity</label>
+                                <input type="file" name="file" id="company"  value="" class="form-control">
+                            </div>
+                            
+
+
+                            <button id="payment-button" type="submit" name="submit" class="btn btn-lg btn-info btn-block">
+                                <span id="payment-button-amount">Submit</span>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

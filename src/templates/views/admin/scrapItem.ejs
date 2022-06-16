@@ -1,0 +1,64 @@
+<%- include('../../partials/adminHeader') -%>
+
+         <div class="content pb-0">
+            <div class="orders">
+               <div class="row">
+                  <div class="col-xl-12">
+                     <div class="card">
+                        <div class="card-body">
+                           <h4 class="box-title">Manage Scrap </h4>
+                        </div>
+                        <div class="card-body--">
+                           <div class="table-stats order-table ov-h">
+                              <table class="table ">
+                                 <thead>
+                                    <tr>
+                                      
+                                       <th>ID</th>
+                                       <th>Name</th>
+                                       <th>Price</th>
+                                       <th>Seller Name</th>
+                                       <th>Status</th>
+                                    </tr>
+                                 </thead>
+                                 <tbody>
+                                    <tr>
+                                       <% var i=1 %>
+                                       <% data.forEach((item)=>{
+                                          %>
+                                       <td><%=i++ %> </td>
+                                       <td> <span class="name"><%= item.name %></span> </td>
+                                       <td> <span class="product"><%= item.price %></span> </td>
+                                       <td><span class="name"><%= item.seller_name%></span></td>
+                                     
+
+                                     
+                                       <td>
+                                          <% if(item.status==1){%>
+                                          <a href="/scrap/status/<%=item._id%>/0"><span class="badge badge-complete">Active</span></a>
+                                          <% }else{ %>
+                                             <a href="/scrap/status/<%=item._id%>/1"><span class="badge badge-complete">Inactive</span></a>
+
+                                        <%  } %>
+
+                                       </td>
+                                    </tr>
+                                   <% }) %>
+                                 </tbody>
+                              </table>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+		  </div>
+         <div class="clearfix"></div>
+         
+      </div>
+      <script src="assets/js/vendor/jquery-2.1.4.min.js" type="text/javascript"></script>
+      <script src="assets/js/popper.min.js" type="text/javascript"></script>
+      <script src="assets/js/plugins.js" type="text/javascript"></script>
+      <script src="assets/js/main.js" type="text/javascript"></script>
+   </body>
+</html>

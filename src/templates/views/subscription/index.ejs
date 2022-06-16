@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <link rel="stylesheet" href="../subscription/style.css">
+  <link rel="stylesheet" href="./css/header.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+  <div class="navcontainer">
+    <div class="leftnav">
+        <a href="/index"> <img class="logo" src="./img/user/RENTAL.png" alt=""></img></a>
+    </div>
+    <div class="midnav">
+        <ul class="navitem">
+            <!-- <li><a href="/">HOME</a></li> -->
+            <li><a href="/artshop">ART GALLERY</a></li>
+            <li><a href="/scrapshop">SCRAP SHOP</a></li> 
+        </ul>
+    </div>
+    <div class="rightnav">
+        <ul class="navitem">
+            <% if(typeof logged !='undefined'){%>
+
+                <li><a href="/signout">LOGOUT</a></li>
+         
+
+
+           
+
+            <li><a href="/subs">SUBSCRIPTION</a></li>
+
+
+
+            <li><a href="/art/index">ART</a></li>
+
+            <li><a href="/scrap/index">SCRAP</a></li>
+            <li><a href="/test">Test</a></li>
+
+
+
+            <%  } else{ %>
+                <li><a href="/login">LOGIN</a></li>
+                <li><a href="/test">Test</a></li>
+
+              <% } %>
+        </ul>
+    </div>
+</div>
+
+  
+  <!-- <h1>hello <%=art_user %></h1> -->
+
+  <% if(typeof msg !='undefined'){%>
+
+
+
+  <h3 class="heading-primary"><%=msg%></h3>
+  <% }%>
+  <h2 class="heading-primary">Our Pricing</h2>
+  <form action="/addsubscription" method="post">
+  <div class="plan-section">
+    <div class="plan basic">
+      <h2 class="plan-heading">Basic</h2>
+      <h3 class="plan-price"><span class="dollar"></span>FREE</h3>
+      <ul class="plan-features">
+        <li class="plan-item">3 Months Free</li>
+        <li class="plan-item">Limited Upload</li>
+        <li class="plan-item">No Support</li>
+        
+      </ul>
+
+      <center><button type="submit" class="btn buy-now" name="submit">Buy Now</button></center>
+    </div>
+</form>
+
+    <div class="plan pro">
+      <h2 class="plan-heading">Professional</h2>
+      <h3 class="plan-price"><span class="dollar">Rs.</span>1800</h3>
+      <ul class="plan-features">
+        <li class="plan-item">6 Months</li>
+        <li class="plan-item">No Upload Limit</li>
+        <li class="plan-item">6 Months Support</li>
+        <!-- <li class="plan-item">Support</li> -->
+      </ul>
+      <form action="/addsubscription_2" method="post">
+      <center><button type="submit" class="btn buy-now" name="submit">Buy Now</button></center>
+    </form>
+
+    </div>
+
+    <div class="plan master">
+      <h2 class="plan-heading">Master</h2>
+      <h3 class="plan-price"><span class="dollar">Rs.</span>3300</h3>
+      <ul class="plan-features">
+        <li class="plan-item">1 Year</li>
+        <li class="plan-item">No Upload Limit</li>
+        <li class="plan-item">1 Year Support</li>
+      </ul>
+      <form action="/addsubscription_3" method="post">
+      <center><button type="submit" class="btn buy-now" name="submit">Buy Now</button></center>
+    </form>
+
+    </div>
+  </div>
+  
+</form>
+
+
+</body>
+</html>
